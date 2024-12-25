@@ -15,7 +15,8 @@ app.get("/roll/:number",(requist,respond)=>{
     if(isNaN(Number(number))){
         respond.send("You must specify a number");
     }else{
-        respond.send(`You rolled a ${number}.`)
+        const randomNumber = Math.ceil(Math.random() * Number(number))
+        respond.send(`You rolled a ${randomNumber}.`)
     }
 })
 
